@@ -1,0 +1,28 @@
+{
+    "tasks": [
+        {
+            "title": "Tarea 1",
+            "responsible": "Santiago",
+            "description": "La primera tarea",
+            "priority": "low"
+        },
+        {
+            "title": "Tarea 2",
+            "responsible": "Francisco",
+            "description": "La segunda tarea",
+            "priority": "medium"
+        },
+        {
+            "title": "Nueva Tarea",
+            "responsible": "Omar",
+            "description": "La última tarea",
+            "priority": "high"
+        },
+        {
+            "title": "Mejor",
+            "responsible": "Santiago",
+            "description": "Mejor que la anterior",
+            "priority": "high"
+        }
+    ]
+}

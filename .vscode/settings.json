@@ -1,0 +1,5 @@
+{
+    "files.watcherExclude": {
+        "**/my-app/node_modules/**": true
+    }
+}

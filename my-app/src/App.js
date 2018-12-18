@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 import Navigation from './components/Navigation.js';
 
 import { tasks } from './tasks.json';
+import TasksForm from './components/TasksForm';
 
 class App extends Component {
   constructor() {
@@ -46,10 +46,17 @@ class App extends Component {
         <h1 className="display-4 mt-2">Título con Bootstrap</h1>
         <div className="container">
           <div className="row">
-            {tasks}
+            <div className="col-lg-3 col-md-5 col-sm-12">
+              <TasksForm></TasksForm>
+            </div>
+            <div className="col-lg-9 col-md-7 col-sm-12">
+              <div className="row">
+                {tasks}
+              </div>
+            </div>
           </div>
         </div>
-        <img src={logo} className="App-logo mt-3" alt="logo" />
+        
       </div>
     );
   }

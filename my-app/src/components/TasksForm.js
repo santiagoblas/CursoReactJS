@@ -8,13 +8,13 @@ class TasksForm extends Component {
             title: '',
             responsible: '',
             description: '',
-            priority: 'baja'
+            priority: 'media'
         };
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleInputChange(e) {
+    async handleInputChange(e) {
         const {value, name} = e.target;
         this.setState({
             [name]: value
@@ -44,28 +44,17 @@ class TasksForm extends Component {
                         <textarea name="description" onChange={this.handleInputChange} className="form-control" placeholder="Descripción" />
                     </div>
                     <div className="form-group">
-                        <select name="priority" className="form-control" onChange={this.handleInputChange}>
-                            <option value="baja">
-                                Baja
-                            </option>
-                            <option value="media">
-                                Media
-                            </option>
-                            <option value="alta">
-                                Alta
-                            </option>
-                        </select>
-                        {/* <div className="btn-group btn-group-toggle" data-toggle="buttons">
-                            <label className="btn btn-sm btn-outline-success active">
-                                <input type="radio" name="priority" onChange={this.handleInput} value="baja" defaultChecked /> baja
+                        <div className="form-group">
+                            <label className="mx-2">
+                                <input type="radio" name="priority" onChange={this.handleInputChange} value="baja" checked={this.state.priority === "baja"} /> baja
                             </label>
-                            <label className="btn btn-sm btn-outline-warning">
-                                <input type="radio" name="priority" onChange={this.handleInput} value="media" /> media
+                            <label className="mx-2">
+                                <input type="radio" name="priority" onChange={this.handleInputChange} value="media" checked={this.state.priority === "media"} /> media
                             </label>
-                            <label className="btn btn-sm btn-outline-danger">
-                                <input type="radio" name="priority" onChange={this.handleInput} value="alta" /> alta
+                            <label className="mx-2">
+                                <input type="radio" name="priority" onChange={this.handleInputChange} value="alta" checked={this.state.priority === "alta"} /> alta
                             </label>
-                        </div> */}
+                        </div>
                     </div>
                     <button type="submit" href="#" className="btn btn-primary">Guardar</button>
                 </form>

@@ -5,6 +5,7 @@ import Navigation from './components/Navigation.js';
 
 import { tasks } from './tasks.json';
 import TasksForm from './components/TasksForm';
+import ShowTasks from './components/ShowTasks';
 
 class App extends Component {
   constructor() {
@@ -13,6 +14,7 @@ class App extends Component {
       tasks
     }
     this.addTask = this.addTask.bind(this);
+    this.removeTask = this.removeTask.bind(this);
   }
 
   addTask(task) {
@@ -32,7 +34,7 @@ class App extends Component {
   }
   
   render() {
-    const tasks = this.state.tasks.map((task, i) => {
+    /* const tasks = this.state.tasks.map((task, i) => {
       return (
         <div className="col-lg-3 col-md-6 col-sm-12" key={i}>
           <div className="card mt-4">
@@ -55,7 +57,7 @@ class App extends Component {
         </div>
         
       );
-    });
+    }); */
 
     return (
       <div className="App">
@@ -73,7 +75,7 @@ class App extends Component {
             </div>
             <div className="col-lg-9 col-md-7 col-sm-12">
               <div className="row">
-                {tasks}
+                <ShowTasks onRemoveTask={this.removeTask} appTasks={this.state.tasks} />
               </div>
             </div>
           </div>
